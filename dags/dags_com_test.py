@@ -10,7 +10,7 @@ from airflow import DAG
 
 with DAG(
     dag_id="dags_com_test",
-    schedule="done",
+    schedule=None,
     start_date=pendulum.datetime(2023, 3, 1, tz="Asia/Seoul"),
     catchup=False
 ) as dag:

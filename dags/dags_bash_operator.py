@@ -5,6 +5,7 @@ import pendulum
 
 # Airflow 2.10.5 이하 버전에서 실습시 아래 경로에서 import 하세요.
 from airflow.operators.bash import BashOperator
+from airflow.operators.empty import EmptyOperator
 from airflow import DAG
 
 with DAG(
