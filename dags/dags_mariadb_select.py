@@ -8,11 +8,11 @@ with DAG(
     schedule_interval=None,
     catchup=False,
 ) as dag:
-    select_data_from_mariadb = SQLExecuteQueryOperator(
+    select_data = SQLExecuteQueryOperator(
         task_id='select_data',
-        mysql_conn_id='test', # Use the connection ID you created
-        sql="SELECT * FROM rdb.rdb_user LIMIT 10;", # Your SQL query
-        handler=lambda x: print(x) # You can define a handler to process the results
+        mysql_conn_id='test',
+        sql="SELECT * FROM rdb.rdb_user;",
+        handler=lambda x: print(x) 
     )
 
-    select_data_from_mariadb
+    select_data
