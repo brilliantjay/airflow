@@ -15,7 +15,7 @@ with DAG(
         task_id="create_country_table",
         conn_id="test",
         sql=r"""
-        CREATE TABLE rdb.Country (
+        CREATE TABLE rdb.Country2 (
             country_id INT NOT NULL AUTO_INCREMENT,
             name VARCHAR(50),
             continent VARCHAR(50),
