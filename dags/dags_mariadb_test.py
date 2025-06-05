@@ -18,7 +18,8 @@ with DAG(
         CREATE TABLE rdb.Country (
             country_id INT NOT NULL AUTO_INCREMENT,
             name VARCHAR(50),
-            continent VARCHAR(50)
+            continent VARCHAR(50),
+            PRIMARY KEY (country_id)
         );
         """   
     )
