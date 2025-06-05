@@ -16,7 +16,7 @@ with DAG(
 ) as dag:
     bash_push = BashOperator(
         task_id = "bash_push",
-        bash_command = 'echo PUSH START {{t1.xcom_push(key="bash_pushed",value=200)}} && echo PUSH_COMPLETE'
+        bash_command = 'echo PUSH START {{ti.xcom_push(key="bash_pushed",value=200)}} && echo PUSH_COMPLETE'
     )
 
     @task(task_id='python_pull')
