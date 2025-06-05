@@ -3,7 +3,7 @@ from airflow import DAG
 from datetime import datetime
 
 with DAG(
-    dag_id='mariadb_select_example',
+    dag_id='dags_mariadb_select_example',
     start_date=datetime(2023, 1, 1),
     schedule_interval=None,
     catchup=False,
