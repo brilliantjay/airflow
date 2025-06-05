@@ -10,7 +10,7 @@ with DAG(
 ) as dag:
     select_data = SQLExecuteQueryOperator(
         task_id='select_data',
-        mysql_conn_id='test',
+        conn_id='test',
         sql="SELECT * FROM rdb.rdb_user;",
         handler=lambda x: print(x) 
     )
