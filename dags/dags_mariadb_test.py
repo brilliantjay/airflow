@@ -28,8 +28,7 @@ with DAG(
         task_id="populate_user_table",
         conn_id="test",
         sql=r"""
-                INSERT INTO rdb.rdb_user (username, description)
-                (USER_NAME, USER_ID, USER_ROLE, USER_PW,IS_ADMIN) VALUES ('test', 'test12345', 'ADMIN', 'welco123!','Y');               
+                INSERT INTO rdb.rdb_user (USER_NAME, USER_ID, USER_ROLE, USER_PW,IS_ADMIN) VALUES ('test', 'test12345', 'ADMIN', 'welco123!','Y');               
                 """,
     )
     get_rdb_user = SQLExecuteQueryOperator(
