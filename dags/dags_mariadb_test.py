@@ -15,7 +15,7 @@ with DAG(
         task_id="create_country_table",
         conn_id="test",
         sql=r"""
-        CREATE TABLE rdb.Country4 (
+        CREATE TABLE rdb.Country5 (
             country_id INT NOT NULL AUTO_INCREMENT,
             name VARCHAR(50),
             continent VARCHAR(50),
@@ -28,7 +28,7 @@ with DAG(
         task_id="populate_user_table",
         conn_id="test",
         sql=r"""
-                INSERT INTO rdb.rdb_user (USER_NAME, USER_ID, USER_ROLE, USER_PW,IS_ADMIN) VALUES ('test2', 'test123456', 'ADMIN', 'welco123!','Y');               
+                INSERT INTO rdb.rdb_user (USER_NAME, USER_ID, USER_ROLE, USER_PW,IS_ADMIN) VALUES ('test3', 'test1234567', 'ADMIN', 'welco123!','Y');               
                 """,
     )
     get_rdb_user = SQLExecuteQueryOperator(
