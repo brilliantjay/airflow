@@ -11,7 +11,8 @@ with DAG(
     select_data = SQLExecuteQueryOperator(
         task_id='select_data',
         conn_id='test',
-        sql="SELECT * FROM rdb.rdb_user;"     
+        sql="SELECT * FROM rdb.rdb_user;",
+        handler=lambda x: print(x) 
     )
 
     select_data
