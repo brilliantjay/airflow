@@ -14,7 +14,7 @@ with DAG(
     def insrt_postgres(ip,port,dbname,user,passwd, **kwargs):
         import psycopg2
         from contextlib import closing
-        with closing(psycopg2.connet(host=ip, dbname=dbname, user=user, password=passwd, port=int(port))) as conn:
+        with closing(psycopg2.connect(host=ip, dbname=dbname, user=user, password=passwd, port=int(port))) as conn:
             with closing(conn.cursor()) as cursor:
                 dag_id = kwargs.get('ti').dag_id
                 task_id = kwargs.get('ti').task_id
