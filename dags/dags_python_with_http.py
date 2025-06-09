@@ -1,5 +1,5 @@
 from airflow.operators.python import PythonOperator
-from airflow.providers.http.operators.http import HttpOperator
+from airflow.providers.http.operators.http import SimpleHttpOperator
 from airflow import DAG
 from airflow.decorators import task
 
@@ -13,7 +13,7 @@ with DAG(
     catchup=False,
 ) as dag:    
 
-    tb_cycle_station_info = HttpOperator(
+    tb_cycle_station_info = SimpleHttpOperator(
         task_id="insrt_postgres",
         http_conn_id = "openapi.seoul.go.kr",
         endpoint='{{var.value.apikey_openapi_seoul_go_kr}}/json/tpssRouteSectionTime/1/10/',
