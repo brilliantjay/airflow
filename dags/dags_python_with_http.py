@@ -14,7 +14,7 @@ with DAG(
 ) as dag:    
 
     tb_cycle_station_info = SimpleHttpOperator(
-        task_id="insrt_postgres",
+        task_id="tb_cycle_station_info",
         http_conn_id = "openapi.seoul.go.kr",
         endpoint='{{var.value.apikey_openapi_seoul_go_kr}}/json/tpssRouteSectionTime/1/10/',
         method="GET",
@@ -24,7 +24,7 @@ with DAG(
     @task(task_id='python_2')
     def python_2(**kwargs):
         ti = kwargs['ti']
-        rslt = ti.xcom.pull(task_ids='tb_cycle_station_info')
+        rslt = ti.xcom_pull(task_ids='tb_cycle_station_info')
         import json
         from pprint import pprint
         pprint(json.loads(rslt))
