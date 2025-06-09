@@ -31,4 +31,4 @@ with DAG(
 
 
 
-    tb_cycle_station_info >> python_2
+    tb_cycle_station_info >> python_2()
