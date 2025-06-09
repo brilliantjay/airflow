@@ -7,7 +7,7 @@ import pendulum
 
 
 with DAG(
-    dag_id="dags_python_with_postgres_hook",
+    dag_id="dags_python_with_http",
     schedule=None,
     start_date=pendulum.datetime(2023, 3, 1, tz="Asia/Seoul"),
     catchup=False,
