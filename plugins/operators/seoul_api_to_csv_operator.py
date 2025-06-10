@@ -24,18 +24,18 @@ class SeoulApiToCsvOperator(BaseOperator):
 
         total_row_df = pd.DataFrame()
         start_row = 1
-        end_row = 1000
+        end_row = 100
 
         while True:
             self.log.info(f'시작:{start_row}')
             self.log.info(f'끝{end_row}')
             row_df = self._call_api(self.base_url, start_row, end_row)
             total_row_df = pd.concat([total_row_df, row_df])
-            if len(row_df) < 1000:
+            if len(row_df) < 100:
                 break
             else:
                 start_row = end_row + 1
-                end_row += 1000
+                end_row += 100
 
         if not os.path.exists(self.path):
             os.system(f'mkdir -p {self.path}')
