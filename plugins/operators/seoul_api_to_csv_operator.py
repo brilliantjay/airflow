@@ -32,7 +32,7 @@ class SeoulApiToCsvOperator(BaseOperator):
             row_df = self._call_api(self.base_url, start_row, end_row)
             total_row_df = pd.concat([total_row_df, row_df])
             break
-        
+
             if len(row_df) < 1000:
                 break
             else:
@@ -55,7 +55,7 @@ class SeoulApiToCsvOperator(BaseOperator):
         if self.base_dt is not None:
             request_url = f'{base_url}/{start_row}/{end_row}/{self.base_dt}'
 
-        response = requests.get(request_url, headers)
+        response = requests.get(request_url)
         contents = json.loads(response.text)
 
         key_nm = list(contents.keys())[0]
