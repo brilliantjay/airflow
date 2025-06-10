@@ -56,7 +56,7 @@ class SeoulApiToCsvOperator(BaseOperator):
         if self.base_dt is not None:
             request_url = f'{base_url}/{start_row}/{end_row}/{self.base_dt}'
 
-        self.log.info(self.request_url)
+        self.log.info(request_url)
         response = requests.get(request_url)
         contents = json.loads(response.text)
 
