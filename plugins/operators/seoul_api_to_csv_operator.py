@@ -13,7 +13,7 @@ class SeoulApiToCsvOperator(BaseOperator):
         self.path = path
         self.file_name = file_name
         #self.endpoint = '{{var.value.apikey_openapi_seoul_go_kr}}/json/'+dataset_nm
-        self.endpoint = '674a7043426f75743830794565486c/json/'+dataset_nm
+        self.endpoint = '7a56584b776f757437314a6e6e7a56/json/'+dataset_nm
         self.base_dt = base_dt
         #http://openapi.seoul.go.kr:8088/674a7043426f75743830794565486c/json/tpssRouteSectionTime/1/1000/
 
